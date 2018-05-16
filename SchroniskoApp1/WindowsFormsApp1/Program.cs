@@ -11,6 +11,7 @@ namespace WindowsFormsApp1
         /// <summary>
         /// Główny punkt wejścia dla aplikacji.
         /// </summary>
+        /// milcia milcia
         [STAThread]
         static void Main()
         {
