@@ -1,0 +1,229 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
+
+
+namespace WindowsFormsApp1
+{
+    public partial class Panel_przegladania : Form
+    {
+        SQLCONNECT nowe_polaczenie = new SQLCONNECT();
+        private OracleCommand control_manager_dialog;
+        private OracleDataAdapter data_adapter;
+        private OracleCommandBuilder command_builder;
+        private DataSet wybor_danych;
+        private DataView wyswietlenie_danych;
+      
+
+
+        public Panel_przegladania()
+        {
+            InitializeComponent();
+
+
+            try
+            {
+
+                nowe_polaczenie.Connection();
+
+                string sql = "select table_name from user_tables where table_name NOT IN( 'BONUS', 'DEPT', 'PLAN_TABLE', 'EMP', 'SALGRADE')";
+
+                control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
+                control_manager_dialog.CommandType = CommandType.Text;
+
+                OracleDataReader dr = control_manager_dialog.ExecuteReader();
+                dr.Read();
+                while (dr.Read())
+                {
+                    comboBox_show.Items.Add((string)dr["table_name"]);
+                }
+
+                dr.Dispose();
+                control_manager_dialog.Dispose();
+                
+            }
+            catch (OracleException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 1:
+                        MessageBox.Show("Error attempting to insert duplicate data.");
+
+                        break;
+                    case 12560:
+                        MessageBox.Show("The database is unvaliable.");
+
+                        break;
+                    default:
+                        MessageBox.Show("Database error: " + ex.Message.ToString());
+
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            finally
+            {
+
+                //nowe_polaczenie.Dispose();
+            }
+
+
+        }
+
+
+        private void button_goback_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Menu_admin ss = new Menu_admin();
+            ss.Show();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                string sql = "select * from " + comboBox_show.Text;
+                control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
+                control_manager_dialog.CommandType = CommandType.Text;
+
+                OracleDataReader dr = control_manager_dialog.ExecuteReader();
+
+                data_adapter = new OracleDataAdapter(control_manager_dialog);
+                wybor_danych = new DataSet();
+
+                data_adapter.Fill(wybor_danych);
+
+                dataGridView_review.DataSource = wybor_danych.Tables[0];
+
+
+                comboBox_sort.Items.Clear();
+                comboBox_sort.ResetText();
+                for (int i = 0; i < wybor_danych.Tables[0].Columns.Count; i++)
+                {
+                    comboBox_sort.Items.Add(wybor_danych.Tables[0].Columns[i].ToString());
+                }
+
+                //comboBox_order.Items.Add("rosnąco");
+                //comboBox_order.Items.Add("malejąco");
+                var choices = new Dictionary<string, string>();
+                choices["ASC"] = "rosnąco";
+                choices["DESC"] = "malejąco";            
+                comboBox_order.DataSource = new BindingSource(choices, null);
+                comboBox_order.DisplayMember = "Value";
+                comboBox_order.ValueMember = "Key";
+
+                dr.Dispose();
+                control_manager_dialog.Dispose();
+                data_adapter.Dispose();
+                wybor_danych.Dispose();
+            }
+            catch (OracleException ex)
+            {
+                switch (ex.Number)
+                {
+                    case 1:
+                        MessageBox.Show("Error attempting to insert duplicate data.");
+
+                        break;
+                    case 12560:
+                        MessageBox.Show("The database is unvaliable.");
+
+                        break;
+                    default:
+                        MessageBox.Show("Database error: " + ex.Message.ToString());
+
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            finally
+            {
+
+                //nowe_polaczenie.Dispose();
+            }
+
+        }
+
+        private void comboBox_order_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button_sort_Click(object sender, EventArgs e)
+        {
+            var order_control = ((KeyValuePair<string, string>)comboBox_order.SelectedItem).Key;
+            if(comboBox_sort.Text.Equals(""))
+            {
+                MessageBox.Show("Wybierz atrybut sortowania");
+            }
+            else
+            {
+                try
+                {
+                    string sql = "select * from " + comboBox_show.Text + " ORDER BY " + comboBox_sort.Text + " " + order_control;
+                    //MessageBox.Show(sql);
+                    control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
+                    control_manager_dialog.CommandType = CommandType.Text;
+
+                    OracleDataReader dr = control_manager_dialog.ExecuteReader();
+
+                    data_adapter = new OracleDataAdapter(control_manager_dialog);
+                    wybor_danych = new DataSet();
+
+                    data_adapter.Fill(wybor_danych);
+
+                    dataGridView_review.DataSource = wybor_danych.Tables[0];
+
+
+                    dr.Dispose();
+                    control_manager_dialog.Dispose();
+                    data_adapter.Dispose();
+                    wybor_danych.Dispose();
+                }
+                catch (OracleException ex)
+                {
+                    switch (ex.Number)
+                    {
+                        case 1:
+                            MessageBox.Show("Error attempting to insert duplicate data.");
+
+                            break;
+                        case 12560:
+                            MessageBox.Show("The database is unvaliable.");
+
+                            break;
+                        default:
+                            MessageBox.Show("Database error: " + ex.Message.ToString());
+
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+                finally
+                {
+
+                    //nowe_polaczenie.Dispose();
+                }
+            }
+        }
+    }
+}

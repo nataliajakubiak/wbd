@@ -52,19 +52,65 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panel_dodawania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_dodawania.Designer.cs">
+      <DependentUpon>Panel_dodawania.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_hasla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_hasla.Designer.cs">
+      <DependentUpon>Panel_hasla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_modyfikacji.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_modyfikacji.Designer.cs">
+      <DependentUpon>Panel_modyfikacji.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel_przegladania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_przegladania.Designer.cs">
+      <DependentUpon>Panel_przegladania.cs</DependentUpon>
+    </Compile>
     <Compile Include="Menu_admin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Menu_admin.Designer.cs">
       <DependentUpon>Menu_admin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panel_usuwania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Panel_usuwania.Designer.cs">
+      <DependentUpon>Panel_usuwania.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SQLCONNECT.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panel_dodawania.resx">
+      <DependentUpon>Panel_dodawania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_hasla.resx">
+      <DependentUpon>Panel_hasla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_modyfikacji.resx">
+      <DependentUpon>Panel_modyfikacji.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_przegladania.resx">
+      <DependentUpon>Panel_przegladania.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menu_admin.resx">
       <DependentUpon>Menu_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel_usuwania.resx">
+      <DependentUpon>Panel_usuwania.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

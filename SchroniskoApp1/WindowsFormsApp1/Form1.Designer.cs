@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class panel_logowania
+    partial class Panel_logowania
     {
         /// <summary>
         /// Wymagana zmienna projektanta.
@@ -39,17 +39,19 @@
             // 
             // text_login
             // 
+            this.text_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.text_login.Location = new System.Drawing.Point(173, 108);
             this.text_login.Name = "text_login";
-            this.text_login.Size = new System.Drawing.Size(187, 20);
+            this.text_login.Size = new System.Drawing.Size(187, 26);
             this.text_login.TabIndex = 0;
             this.text_login.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // text_haslo
             // 
+            this.text_haslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.text_haslo.Location = new System.Drawing.Point(173, 155);
             this.text_haslo.Name = "text_haslo";
-            this.text_haslo.Size = new System.Drawing.Size(187, 20);
+            this.text_haslo.Size = new System.Drawing.Size(187, 26);
             this.text_haslo.TabIndex = 1;
             // 
             // label_panel_logowania
@@ -61,26 +63,24 @@
             this.label_panel_logowania.Size = new System.Drawing.Size(280, 24);
             this.label_panel_logowania.TabIndex = 2;
             this.label_panel_logowania.Text = "Aby kontynować, zaloguj się!";
-            this.label_panel_logowania.Click += new System.EventHandler(this.label_panel_logowania_Click);
             // 
             // label_login
             // 
             this.label_login.AutoSize = true;
-            this.label_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_login.Location = new System.Drawing.Point(106, 108);
             this.label_login.Name = "label_login";
-            this.label_login.Size = new System.Drawing.Size(44, 16);
+            this.label_login.Size = new System.Drawing.Size(52, 20);
             this.label_login.TabIndex = 3;
             this.label_login.Text = "Login:";
-            this.label_login.Click += new System.EventHandler(this.label2_Click);
             // 
             // label_haslo
             // 
             this.label_haslo.AutoSize = true;
-            this.label_haslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label_haslo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label_haslo.Location = new System.Drawing.Point(106, 159);
             this.label_haslo.Name = "label_haslo";
-            this.label_haslo.Size = new System.Drawing.Size(50, 16);
+            this.label_haslo.Size = new System.Drawing.Size(55, 20);
             this.label_haslo.TabIndex = 4;
             this.label_haslo.Text = "Hasło:";
             // 
@@ -88,7 +88,7 @@
             // 
             this.button_zaloguj.Location = new System.Drawing.Point(109, 243);
             this.button_zaloguj.Name = "button_zaloguj";
-            this.button_zaloguj.Size = new System.Drawing.Size(100, 46);
+            this.button_zaloguj.Size = new System.Drawing.Size(112, 46);
             this.button_zaloguj.TabIndex = 5;
             this.button_zaloguj.Text = "Zaloguj się";
             this.button_zaloguj.UseVisualStyleBackColor = true;
@@ -96,15 +96,15 @@
             // 
             // button_wyjscie
             // 
-            this.button_wyjscie.Location = new System.Drawing.Point(258, 243);
+            this.button_wyjscie.Location = new System.Drawing.Point(246, 243);
             this.button_wyjscie.Name = "button_wyjscie";
-            this.button_wyjscie.Size = new System.Drawing.Size(102, 46);
+            this.button_wyjscie.Size = new System.Drawing.Size(114, 46);
             this.button_wyjscie.TabIndex = 6;
             this.button_wyjscie.Text = "Wyjście";
             this.button_wyjscie.UseVisualStyleBackColor = true;
             this.button_wyjscie.Click += new System.EventHandler(this.button_wyjscie_Click);
             // 
-            // panel_logowania
+            // Panel_logowania
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -116,7 +116,7 @@
             this.Controls.Add(this.label_panel_logowania);
             this.Controls.Add(this.text_haslo);
             this.Controls.Add(this.text_login);
-            this.Name = "panel_logowania";
+            this.Name = "Panel_logowania";
             this.Text = "Schronisko DB";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -125,14 +125,13 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox text_login;
         private System.Windows.Forms.TextBox text_haslo;
         private System.Windows.Forms.Label label_panel_logowania;
         private System.Windows.Forms.Label label_login;
         private System.Windows.Forms.Label label_haslo;
         private System.Windows.Forms.Button button_zaloguj;
         private System.Windows.Forms.Button button_wyjscie;
+        public System.Windows.Forms.TextBox text_login;
     }
 }
 
