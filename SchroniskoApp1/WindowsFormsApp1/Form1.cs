@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
                     else if (text_login_string == "ksiegowa")
                     {
                         this.Hide();
-                        Menu_ksiegowa ss = new Menu_ksiegowa(text_login_string);
+                        Menu_ksiegowa ss = new Menu_ksiegowa();
                         ss.Show();
                     }
 
