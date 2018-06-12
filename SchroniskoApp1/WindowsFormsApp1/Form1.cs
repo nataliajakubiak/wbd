@@ -63,15 +63,22 @@ namespace WindowsFormsApp1
                 dr.Read();
                 OracleDecimal oracledecimal1 = dr.GetOracleDecimal(0);
 
-                if ( oracledecimal1.ToString().Equals("1"))
+                if (oracledecimal1.ToString().Equals("1"))
                 {
-                    
-                    this.Hide();
-                    Menu_admin ss = new Menu_admin(text_login_string);
-                    ss.Show();
-           
+                    if (text_login_string=="admin1") {
+                        this.Hide();
+                        Menu_admin ss = new Menu_admin(text_login_string);
+                        ss.Show();
+                    }
+                    else if (text_login_string == "ksiegowa")
+                    {
+                        this.Hide();
+                        Menu_ksiegowa ss = new Menu_ksiegowa(text_login_string);
+                        ss.Show();
+                    }
 
                 }
+         
                 else
                 {
                     String message_error_login = "Logowanie nie powiodło się.\nUpewnij się, że wpisane dane są prawidłowe.";

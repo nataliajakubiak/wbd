@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Menu_ksiegowa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menu_ksiegowa.Designer.cs">
+      <DependentUpon>Menu_ksiegowa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel_dodawania.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="SQLCONNECT.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menu_ksiegowa.resx">
+      <DependentUpon>Menu_ksiegowa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel_dodawania.resx">
       <DependentUpon>Panel_dodawania.cs</DependentUpon>
