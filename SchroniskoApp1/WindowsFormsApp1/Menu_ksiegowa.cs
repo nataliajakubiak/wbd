@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
 
 namespace WindowsFormsApp1
 {
@@ -24,7 +26,20 @@ namespace WindowsFormsApp1
             this.text_login_string = text_login_string;
         }
 
+
         private void Menu_ksiegowa_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void przegladaj_click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Panel_przegladania ss = new Panel_przegladania("KSIEGOWA");
+            ss.Show();
+        }
+
+        private void nowyRekord_Click(object sender, EventArgs e)
         {
 
         }

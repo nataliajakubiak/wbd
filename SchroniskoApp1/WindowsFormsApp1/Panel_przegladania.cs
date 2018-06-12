@@ -21,20 +21,41 @@ namespace WindowsFormsApp1
         private OracleCommandBuilder command_builder;
         private DataSet wybor_danych;
         private DataView wyswietlenie_danych;
-      
 
+        public static string KSIEGOWA = "KSIEGOWA";
+        public static string OPIEKUN = "OPIEKUN";
+
+        public string TypPracownika { get; set; }
+
+        public Panel_przegladania(string TypPracownika)
+        {
+            this.TypPracownika = TypPracownika;
+            InitializeComponent();
+            init();
+        }
 
         public Panel_przegladania()
         {
             InitializeComponent();
+            init();
+        }
 
-
+        private void init()
+        {
             try
             {
 
                 nowe_polaczenie.Connection();
 
-                string sql = "select table_name from user_tables where table_name NOT IN( 'BONUS', 'DEPT', 'PLAN_TABLE', 'EMP', 'SALGRADE')";
+                string sql;
+                if (this.TypPracownika.Equals(KSIEGOWA))
+                {
+                    sql = "select table_name from user_tables where table_name in ('GRAFIKI', 'WYNAGRODZENIA')";
+                }
+                else
+                {
+                    sql = "select table_name from user_tables where table_name NOT IN( 'BONUS', 'DEPT', 'PLAN_TABLE', 'EMP', 'SALGRADE')";
+                }
 
                 control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
                 control_manager_dialog.CommandType = CommandType.Text;
@@ -48,7 +69,7 @@ namespace WindowsFormsApp1
 
                 dr.Dispose();
                 control_manager_dialog.Dispose();
-                
+
             }
             catch (OracleException ex)
             {
@@ -77,10 +98,7 @@ namespace WindowsFormsApp1
 
                 //nowe_polaczenie.Dispose();
             }
-
-
         }
-
 
         private void button_goback_Click(object sender, EventArgs e)
         {

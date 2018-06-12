@@ -45,6 +45,7 @@
             this.button_review.TabIndex = 1;
             this.button_review.Text = "Przeglądaj";
             this.button_review.UseVisualStyleBackColor = true;
+            this.button_review.Click += new System.EventHandler(this.przegladaj_click);
             // 
             // button_new_record
             // 
@@ -54,6 +55,7 @@
             this.button_new_record.TabIndex = 2;
             this.button_new_record.Text = "Dodaj nowy rekord";
             this.button_new_record.UseVisualStyleBackColor = true;
+            this.button_new_record.Click += new System.EventHandler(this.nowyRekord_Click);
             // 
             // button_modify_record
             // 
