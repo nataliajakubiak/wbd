@@ -48,9 +48,13 @@ namespace WindowsFormsApp1
                 nowe_polaczenie.Connection();
 
                 string sql;
-                if (this.TypPracownika.Equals(KSIEGOWA))
+                if (this.TypPracownika == KSIEGOWA)
                 {
-                    sql = "select table_name from user_tables where table_name in ('GRAFIKI', 'WYNAGRODZENIA')";
+                    sql = "select table_name from user_tables where table_name in ('GRAFIKI', 'WYNAGRODZENIA', 'SPONSORZY', 'PRACOWNICY', 'PRACOWNIK_WYDARZENIE', 'STANOWISKA', 'WYDARZENIA')";
+                }
+                else if(this.TypPracownika == OPIEKUN)
+                {
+                    sql = "select table_name from user_tables where table_name in ('GRAFIKI', 'PRACOWNICY', 'PRACOWNIK_WYDARZENIE', 'STANOWISKA', 'WYDARZENIA', 'ADOPCJE', 'BOKSY', 'KOTY', 'PSY', 'RASY_KOT', 'RASY_PIES', 'ROZMIARY_PSA', 'SZCZEPIENIA', 'SZCZEPIONKI', 'ZWIERZETA')";
                 }
                 else
                 {
@@ -60,8 +64,8 @@ namespace WindowsFormsApp1
                 control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
                 control_manager_dialog.CommandType = CommandType.Text;
 
-                OracleDataReader dr = control_manager_dialog.ExecuteReader();
-                dr.Read();
+                OracleDataReader dr = control_manager_dialog.ExecuteReader();            
+                
                 while (dr.Read())
                 {
                     comboBox_show.Items.Add((string)dr["table_name"]);

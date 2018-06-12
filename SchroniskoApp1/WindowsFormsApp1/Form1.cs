@@ -76,7 +76,12 @@ namespace WindowsFormsApp1
                         Menu_ksiegowa ss = new Menu_ksiegowa();
                         ss.Show();
                     }
-
+                    else if (text_login_string=="opiekun")
+                    {
+                        this.Hide();
+                        Menu_opiekun ss = new Menu_opiekun();
+                        ss.Show();
+                    }
                 }
          
                 else

@@ -27,11 +27,6 @@ namespace WindowsFormsApp1
         }
 
 
-        private void Menu_ksiegowa_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void przegladaj_click(object sender, EventArgs e)
         {
             this.Hide();
