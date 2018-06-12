@@ -36,7 +36,9 @@ namespace WindowsFormsApp1
 
         private void nowyRekord_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Panel_dodawania ss = new Panel_dodawania("KSIEGOWA");
+            ss.Show();
         }
     }
 }

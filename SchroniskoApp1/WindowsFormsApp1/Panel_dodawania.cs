@@ -21,22 +21,52 @@ namespace WindowsFormsApp1
         private DataSet wybor_danych;
         private DataView wyswietlenie_danych;
 
+        public static string KSIEGOWA = "KSIEGOWA";
+        public static string OPIEKUN = "OPIEKUN";
+
+        public string TypPracownika { get; set; }
+
+
+        public Panel_dodawania(string TypPracownika)
+        {
+            this.TypPracownika = TypPracownika;
+            InitializeComponent();
+            init();
+        }
+
         public Panel_dodawania()
         {
             InitializeComponent();
-
+            init();
+        }
+       private void init()
+        {
             try
-            {
-
+            {           
                 nowe_polaczenie.Connection();
 
-                string sql = "select table_name from user_tables where table_name NOT IN( 'BONUS', 'DEPT', 'PLAN_TABLE', 'EMP', 'SALGRADE')";
+                string sql;
+
+                if (this.TypPracownika == KSIEGOWA)
+                {
+                    sql = "select table_name from user_tables where table_name  IN( 'GRAFIKI', 'WYNAGRODZENIA', 'SPONSORZY', 'PRACOWNICY', 'PRACOWNIK_WYDARZENIE', 'STANOWISKA', 'WYDARZENIA')";
+                }
+
+                else if (this.TypPracownika == OPIEKUN)
+                {
+                    sql = "select table_name from user_tables where table_name  IN( 'GRAFIKI', 'PRACOWNICY', 'PRACOWNIK_WYDARZENIE', 'STANOWISKA', 'WYDARZENIA', 'ADOPCJE', 'BOKSY', 'KOTY', 'PSY', 'RASY_KOT', 'RASY_PIES', 'ROZMIARY_PSA', 'SZCZEPIENIA', 'SZCZEPIONKI', 'ZWIERZETA')";
+
+                }
+                else
+                {
+                    sql = "select table_name from user_tables where table_name NOT IN( 'BONUS', 'DEPT', 'PLAN_TABLE', 'EMP', 'SALGRADE')";
+                }
 
                 control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
                 control_manager_dialog.CommandType = CommandType.Text;
 
                 OracleDataReader dr = control_manager_dialog.ExecuteReader();
-                dr.Read();
+                //dr.Read();
                 while (dr.Read())
                 {
                     comboBox_show.Items.Add((string)dr["table_name"]);
