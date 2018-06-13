@@ -12,6 +12,14 @@ namespace WindowsFormsApp1
 {
     public partial class Menu_opiekun : Form
     {
+        public string NazwaUzytkownika { get; set; }
+
+        public Menu_opiekun(string NazwaUzytkownika)
+        {
+            this.NazwaUzytkownika = NazwaUzytkownika;
+            InitializeComponent();
+        }
+
         public Menu_opiekun()
         {
             InitializeComponent();
@@ -20,14 +28,14 @@ namespace WindowsFormsApp1
         private void przegladajClick(object sender, EventArgs e)
         {
             this.Hide();
-            Panel_przegladania ss = new Panel_przegladania("OPIEKUN");
+            Panel_przegladania ss = new Panel_przegladania(this.NazwaUzytkownika);
             ss.Show();
         }
 
         private void mojeDaneClick(object sender, EventArgs e)
         {
             this.Hide();
-            mojeDane ss = new mojeDane();
+            mojeDane ss = new mojeDane(this.NazwaUzytkownika);
             ss.Show();
         }
 

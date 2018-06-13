@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.imie_textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.drugieImie_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -77,9 +77,9 @@
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.drugieImie_textBox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.imie_textBox);
             this.groupBox1.Location = new System.Drawing.Point(12, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(476, 103);
@@ -88,13 +88,13 @@
             this.groupBox1.Text = "Dane podstawowe";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // textBox1
+            // imie_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(87, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.imie_textBox.Location = new System.Drawing.Point(87, 19);
+            this.imie_textBox.Name = "imie_textBox";
+            this.imie_textBox.ReadOnly = true;
+            this.imie_textBox.Size = new System.Drawing.Size(100, 20);
+            this.imie_textBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -105,13 +105,13 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Imię:";
             // 
-            // textBox2
+            // drugieImie_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(349, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 2;
+            this.drugieImie_textBox.Location = new System.Drawing.Point(349, 22);
+            this.drugieImie_textBox.Name = "drugieImie_textBox";
+            this.drugieImie_textBox.ReadOnly = true;
+            this.drugieImie_textBox.Size = new System.Drawing.Size(100, 20);
+            this.drugieImie_textBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -435,9 +435,9 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox drugieImie_textBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox imie_textBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

@@ -39,6 +39,7 @@
             this.comboBox_sort = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button_sort = new System.Windows.Forms.Button();
+            this.TypUzytkownika_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_review)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -153,11 +154,20 @@
             this.button_sort.UseVisualStyleBackColor = true;
             this.button_sort.Click += new System.EventHandler(this.button_sort_Click);
             // 
+            // TypUzytkownika_label
+            // 
+            this.TypUzytkownika_label.AutoSize = true;
+            this.TypUzytkownika_label.Location = new System.Drawing.Point(55, 18);
+            this.TypUzytkownika_label.Name = "TypUzytkownika_label";
+            this.TypUzytkownika_label.Size = new System.Drawing.Size(0, 13);
+            this.TypUzytkownika_label.TabIndex = 6;
+            // 
             // Panel_przegladania
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TypUzytkownika_label);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button_goback);
             this.Controls.Add(this.dataGridView_review);
@@ -187,5 +197,6 @@
         private System.Windows.Forms.ComboBox comboBox_sort;
         private System.Windows.Forms.ComboBox comboBox_order;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label TypUzytkownika_label;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,51 @@ namespace WindowsFormsApp1
 {
     public partial class mojeDane : Form
     {
-        public mojeDane()
+        SQLCONNECT nowe_polaczenie = new SQLCONNECT();
+        public string NazwaUzytkownika { get; set; }
+
+        public mojeDane(string NazwaUzytkownika)
         {
+            this.NazwaUzytkownika = NazwaUzytkownika;
+          
             InitializeComponent();
+            Init();
+        }
+
+        private void Init()
+        {
+            nowe_polaczenie.Connection();
+
+            string sql = "SELECT * FROM PRACOWNICY WHERE nazwa_uzytkownika = '" + this.NazwaUzytkownika + "'";
+            var control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
+            control_manager_dialog.CommandType = CommandType.Text;
+
+            OracleDataReader dr = control_manager_dialog.ExecuteReader();
+
+            dr.Read();
+
+            string Imie, DrugieImie, Nazwisko, Pesel, Plec, Miasto, Ulica, NrBudynku;
+            string NrLokalu, KodPocztowy, NrTelefonu, Email;
+            DateTime DataUrodzenia;
+
+            Imie = (string)dr["IMIE"];
+            DrugieImie = dr["DRUGIE_IMIE"] is System.DBNull ? "" : (string)dr["DRUGIE_IMIE"] ;
+            Nazwisko = (string)dr["NAZWISKO"];
+            DataUrodzenia = (DateTime)dr["DATA_URODZENIA"];
+            Pesel = (string)dr["PESEL"];
+            Plec = (string)dr["PLEC"];
+            Miasto= (string)dr["MIASTO"];
+            Ulica= (string)dr["ULICA"];
+            NrBudynku= (string)dr["NR_BUDYBKU"];
+            NrLokalu= (string)dr["NR_MIESZKANIA"];
+           // KodPocztowy= (string)dr["PLEC"];
+            NrTelefonu= (string)dr["TELEFON"];
+            Email= (string)dr["EMAIL"];
+
+
+
+            this.imie_textBox.Text = Imie;
+            this.drugieImie_textBox.Text = DrugieImie;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)

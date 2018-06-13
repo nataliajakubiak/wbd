@@ -23,13 +23,15 @@ namespace WindowsFormsApp1
         private DataView wyswietlenie_danych;
 
         public static string KSIEGOWA = "KSIEGOWA";
-        public static string OPIEKUN = "OPIEKUN";
+        public static string OPIEKUN = "opiekun";
+        public static string ANNA = "anna";
 
-        public string TypPracownika { get; set; }
+        public string NazwaUzytkownika { get; set; }
+        public string TypUzytkownika { get; set; }
 
         public Panel_przegladania(string TypPracownika)
         {
-            this.TypPracownika = TypPracownika;
+            this.NazwaUzytkownika = TypPracownika;
             InitializeComponent();
             init();
         }
@@ -43,16 +45,31 @@ namespace WindowsFormsApp1
         private void init()
         {
             try
-            {
-
+            {           
                 nowe_polaczenie.Connection();
 
                 string sql;
-                if (this.TypPracownika == KSIEGOWA)
+                sql = "select nazwa from stanowiska join pracownicy on " +
+                    "stanowiska.NR_STANOWISKA = pracownicy.NR_STANOWISKA " +
+                    "where nazwa_uzytkownika = '" + this.NazwaUzytkownika + "'";
+
+                control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
+                control_manager_dialog.CommandType = CommandType.Text;
+
+                OracleDataReader dr = control_manager_dialog.ExecuteReader();
+                dr.Read();
+
+                if (dr.HasRows)
+                {
+                    TypUzytkownika = (string)dr["NAZWA"];
+                    TypUzytkownika_label.Text = TypUzytkownika;
+                }
+
+                if (this.TypUzytkownika == KSIEGOWA)
                 {
                     sql = "select table_name from user_tables where table_name in ('GRAFIKI', 'WYNAGRODZENIA', 'SPONSORZY', 'PRACOWNICY', 'PRACOWNIK_WYDARZENIE', 'STANOWISKA', 'WYDARZENIA')";
                 }
-                else if(this.TypPracownika == OPIEKUN)
+                else if(this.TypUzytkownika == OPIEKUN)
                 {
                     sql = "select table_name from user_tables where table_name in ('GRAFIKI', 'PRACOWNICY', 'PRACOWNIK_WYDARZENIE', 'STANOWISKA', 'WYDARZENIA', 'ADOPCJE', 'BOKSY', 'KOTY', 'PSY', 'RASY_KOT', 'RASY_PIES', 'ROZMIARY_PSA', 'SZCZEPIENIA', 'SZCZEPIONKI', 'ZWIERZETA')";
                 }
@@ -64,7 +81,7 @@ namespace WindowsFormsApp1
                 control_manager_dialog = new OracleCommand(sql, nowe_polaczenie.nowe_polaczenie);
                 control_manager_dialog.CommandType = CommandType.Text;
 
-                OracleDataReader dr = control_manager_dialog.ExecuteReader();            
+                dr = control_manager_dialog.ExecuteReader();            
                 
                 while (dr.Read())
                 {
@@ -106,10 +123,10 @@ namespace WindowsFormsApp1
 
         private void button_goback_Click(object sender, EventArgs e)
         {
-            if (TypPracownika == OPIEKUN)
+            if (TypUzytkownika == OPIEKUN)
             {
                 this.Hide();
-                Menu_opiekun ss = new Menu_opiekun();
+                Menu_opiekun ss = new Menu_opiekun(this.NazwaUzytkownika);
                 ss.Show();
             }
             else
