@@ -43,9 +43,9 @@
             this.button_review.Name = "button_review";
             this.button_review.Size = new System.Drawing.Size(235, 40);
             this.button_review.TabIndex = 2;
-            this.button_review.Text = "Przeglądaj";
+            this.button_review.Text = "Moje dane";
             this.button_review.UseVisualStyleBackColor = true;
-            this.button_review.Click += new System.EventHandler(this.przegladajClick);
+            this.button_review.Click += new System.EventHandler(this.mojeDaneClick);
             // 
             // button_new_record
             // 
@@ -53,8 +53,9 @@
             this.button_new_record.Name = "button_new_record";
             this.button_new_record.Size = new System.Drawing.Size(235, 40);
             this.button_new_record.TabIndex = 3;
-            this.button_new_record.Text = "Dodaj nowy rekord";
+            this.button_new_record.Text = "Moje zwierzęta";
             this.button_new_record.UseVisualStyleBackColor = true;
+            this.button_new_record.Click += new System.EventHandler(this.mojeZwierzetaClick);
             // 
             // button_modify_record
             // 
@@ -62,8 +63,9 @@
             this.button_modify_record.Name = "button_modify_record";
             this.button_modify_record.Size = new System.Drawing.Size(235, 40);
             this.button_modify_record.TabIndex = 4;
-            this.button_modify_record.Text = "Modyfikuj rekordy";
+            this.button_modify_record.Text = "Przeglądaj";
             this.button_modify_record.UseVisualStyleBackColor = true;
+            this.button_modify_record.Click += new System.EventHandler(this.przegladajClick);
             // 
             // button_delete_record
             // 
@@ -71,8 +73,9 @@
             this.button_delete_record.Name = "button_delete_record";
             this.button_delete_record.Size = new System.Drawing.Size(235, 40);
             this.button_delete_record.TabIndex = 5;
-            this.button_delete_record.Text = "Usuń rekordy";
+            this.button_delete_record.Text = "Modyfikuj rekordy";
             this.button_delete_record.UseVisualStyleBackColor = true;
+            this.button_delete_record.Click += new System.EventHandler(this.ModyfikujRekordyClick);
             // 
             // button_change_password
             // 
@@ -82,6 +85,7 @@
             this.button_change_password.TabIndex = 6;
             this.button_change_password.Text = "Zmień hasło";
             this.button_change_password.UseVisualStyleBackColor = true;
+            this.button_change_password.Click += new System.EventHandler(this.ZmienHasloClick);
             // 
             // button_logout
             // 
@@ -91,6 +95,7 @@
             this.button_logout.TabIndex = 7;
             this.button_logout.Text = "Wyloguj się";
             this.button_logout.UseVisualStyleBackColor = true;
+            this.button_logout.Click += new System.EventHandler(this.wylogujClick);
             // 
             // button_exit
             // 
@@ -100,6 +105,7 @@
             this.button_exit.TabIndex = 8;
             this.button_exit.Text = "Zakończ pracę z programem";
             this.button_exit.UseVisualStyleBackColor = true;
+            this.button_exit.Click += new System.EventHandler(this.zakonczClick);
             // 
             // Menu_opiekun
             // 

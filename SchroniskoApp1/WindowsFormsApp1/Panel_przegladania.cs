@@ -106,9 +106,18 @@ namespace WindowsFormsApp1
 
         private void button_goback_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Menu_admin ss = new Menu_admin();
-            ss.Show();
+            if (TypPracownika == OPIEKUN)
+            {
+                this.Hide();
+                Menu_opiekun ss = new Menu_opiekun();
+                ss.Show();
+            }
+            else
+            {
+                this.Hide();
+                Menu_admin ss = new Menu_admin();
+                ss.Show();
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

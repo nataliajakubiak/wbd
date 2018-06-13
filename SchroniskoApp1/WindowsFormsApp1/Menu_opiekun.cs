@@ -23,5 +23,37 @@ namespace WindowsFormsApp1
             Panel_przegladania ss = new Panel_przegladania("OPIEKUN");
             ss.Show();
         }
+
+        private void mojeDaneClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mojeZwierzetaClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ModyfikujRekordyClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ZmienHasloClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void zakonczClick(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void wylogujClick(object sender, EventArgs e)
+        {
+            this.Hide();
+            Panel_logowania ss = new Panel_logowania();
+            ss.Show();
+        }
     }
 }
