@@ -70,6 +70,12 @@
     <Compile Include="mojeDane.Designer.cs">
       <DependentUpon>mojeDane.cs</DependentUpon>
     </Compile>
+    <Compile Include="mojeZwierzeta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mojeZwierzeta.Designer.cs">
+      <DependentUpon>mojeZwierzeta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel_dodawania.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="mojeDane.resx">
       <DependentUpon>mojeDane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mojeZwierzeta.resx">
+      <DependentUpon>mojeZwierzeta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel_dodawania.resx">
       <DependentUpon>Panel_dodawania.cs</DependentUpon>

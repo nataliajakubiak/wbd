@@ -33,7 +33,9 @@ namespace WindowsFormsApp1
 
         private void mojeZwierzetaClick(object sender, EventArgs e)
         {
-
+            this.Hide();
+            mojeZwierzeta ss = new mojeZwierzeta();
+            ss.Show();
         }
 
         private void ModyfikujRekordyClick(object sender, EventArgs e)
