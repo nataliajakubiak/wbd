@@ -26,7 +26,9 @@ namespace WindowsFormsApp1
 
         private void mojeDaneClick(object sender, EventArgs e)
         {
-
+            this.Hide();
+            mojeDane ss = new mojeDane();
+            ss.Show();
         }
 
         private void mojeZwierzetaClick(object sender, EventArgs e)

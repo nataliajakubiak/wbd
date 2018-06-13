@@ -64,6 +64,12 @@
     <Compile Include="Menu_opiekun.Designer.cs">
       <DependentUpon>Menu_opiekun.cs</DependentUpon>
     </Compile>
+    <Compile Include="mojeDane.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mojeDane.Designer.cs">
+      <DependentUpon>mojeDane.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel_dodawania.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menu_opiekun.resx">
       <DependentUpon>Menu_opiekun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mojeDane.resx">
+      <DependentUpon>mojeDane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel_dodawania.resx">
       <DependentUpon>Panel_dodawania.cs</DependentUpon>
