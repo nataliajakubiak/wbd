@@ -33,18 +33,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.drugieImie_textBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.nazwisko_textBox = new System.Windows.Forms.TextBox();
+            this.dataUr_textBox = new System.Windows.Forms.TextBox();
+            this.pesel_textBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.miasto_textBox = new System.Windows.Forms.TextBox();
+            this.kodPocztowy_textBox = new System.Windows.Forms.TextBox();
+            this.nrBud_textBox = new System.Windows.Forms.TextBox();
+            this.nrLok_textBox = new System.Windows.Forms.TextBox();
+            this.ulica_textBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -52,14 +52,14 @@
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.email_textBox = new System.Windows.Forms.TextBox();
+            this.nrTel_textBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.nrKonta_textBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.plec_textBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -73,9 +73,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.pesel_textBox);
+            this.groupBox1.Controls.Add(this.dataUr_textBox);
+            this.groupBox1.Controls.Add(this.nazwisko_textBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.drugieImie_textBox);
             this.groupBox1.Controls.Add(this.label1);
@@ -123,29 +123,29 @@
             this.label2.Text = "Drugie imię:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // textBox3
+            // nazwisko_textBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(87, 46);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 4;
+            this.nazwisko_textBox.Location = new System.Drawing.Point(87, 46);
+            this.nazwisko_textBox.Name = "nazwisko_textBox";
+            this.nazwisko_textBox.ReadOnly = true;
+            this.nazwisko_textBox.Size = new System.Drawing.Size(100, 20);
+            this.nazwisko_textBox.TabIndex = 4;
             // 
-            // textBox4
+            // dataUr_textBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(349, 49);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 5;
+            this.dataUr_textBox.Location = new System.Drawing.Point(349, 49);
+            this.dataUr_textBox.Name = "dataUr_textBox";
+            this.dataUr_textBox.ReadOnly = true;
+            this.dataUr_textBox.Size = new System.Drawing.Size(100, 20);
+            this.dataUr_textBox.TabIndex = 5;
             // 
-            // textBox5
+            // pesel_textBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(87, 71);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 6;
+            this.pesel_textBox.Location = new System.Drawing.Point(87, 71);
+            this.pesel_textBox.Name = "pesel_textBox";
+            this.pesel_textBox.ReadOnly = true;
+            this.pesel_textBox.Size = new System.Drawing.Size(100, 20);
+            this.pesel_textBox.TabIndex = 6;
             // 
             // label3
             // 
@@ -183,11 +183,11 @@
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.ulica_textBox);
+            this.groupBox2.Controls.Add(this.nrLok_textBox);
+            this.groupBox2.Controls.Add(this.nrBud_textBox);
+            this.groupBox2.Controls.Add(this.kodPocztowy_textBox);
+            this.groupBox2.Controls.Add(this.miasto_textBox);
             this.groupBox2.Location = new System.Drawing.Point(12, 111);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(476, 105);
@@ -195,45 +195,45 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane adresowe";
             // 
-            // textBox6
+            // miasto_textBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(87, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 1;
+            this.miasto_textBox.Location = new System.Drawing.Point(87, 19);
+            this.miasto_textBox.Name = "miasto_textBox";
+            this.miasto_textBox.ReadOnly = true;
+            this.miasto_textBox.Size = new System.Drawing.Size(100, 20);
+            this.miasto_textBox.TabIndex = 1;
             // 
-            // textBox7
+            // kodPocztowy_textBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(87, 77);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 2;
+            this.kodPocztowy_textBox.Location = new System.Drawing.Point(87, 77);
+            this.kodPocztowy_textBox.Name = "kodPocztowy_textBox";
+            this.kodPocztowy_textBox.ReadOnly = true;
+            this.kodPocztowy_textBox.Size = new System.Drawing.Size(100, 20);
+            this.kodPocztowy_textBox.TabIndex = 2;
             // 
-            // textBox8
+            // nrBud_textBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(87, 49);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 3;
+            this.nrBud_textBox.Location = new System.Drawing.Point(87, 49);
+            this.nrBud_textBox.Name = "nrBud_textBox";
+            this.nrBud_textBox.ReadOnly = true;
+            this.nrBud_textBox.Size = new System.Drawing.Size(100, 20);
+            this.nrBud_textBox.TabIndex = 3;
             // 
-            // textBox9
+            // nrLok_textBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(349, 45);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 4;
+            this.nrLok_textBox.Location = new System.Drawing.Point(349, 45);
+            this.nrLok_textBox.Name = "nrLok_textBox";
+            this.nrLok_textBox.ReadOnly = true;
+            this.nrLok_textBox.Size = new System.Drawing.Size(100, 20);
+            this.nrLok_textBox.TabIndex = 4;
             // 
-            // textBox10
+            // ulica_textBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(349, 19);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 5;
+            this.ulica_textBox.Location = new System.Drawing.Point(349, 19);
+            this.ulica_textBox.Name = "ulica_textBox";
+            this.ulica_textBox.ReadOnly = true;
+            this.ulica_textBox.Size = new System.Drawing.Size(100, 20);
+            this.ulica_textBox.TabIndex = 5;
             // 
             // label6
             // 
@@ -288,8 +288,8 @@
             // 
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.textBox12);
-            this.groupBox3.Controls.Add(this.textBox11);
+            this.groupBox3.Controls.Add(this.nrTel_textBox);
+            this.groupBox3.Controls.Add(this.email_textBox);
             this.groupBox3.Location = new System.Drawing.Point(12, 222);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(476, 58);
@@ -299,9 +299,9 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox14);
+            this.groupBox4.Controls.Add(this.plec_textBox);
             this.groupBox4.Controls.Add(this.label14);
-            this.groupBox4.Controls.Add(this.textBox13);
+            this.groupBox4.Controls.Add(this.nrKonta_textBox);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Location = new System.Drawing.Point(12, 286);
             this.groupBox4.Name = "groupBox4";
@@ -310,26 +310,26 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Inne";
             // 
-            // textBox11
+            // email_textBox
             // 
-            this.textBox11.Location = new System.Drawing.Point(349, 21);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 2;
+            this.email_textBox.Location = new System.Drawing.Point(302, 21);
+            this.email_textBox.Name = "email_textBox";
+            this.email_textBox.ReadOnly = true;
+            this.email_textBox.Size = new System.Drawing.Size(147, 20);
+            this.email_textBox.TabIndex = 2;
             // 
-            // textBox12
+            // nrTel_textBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(87, 19);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 3;
+            this.nrTel_textBox.Location = new System.Drawing.Point(87, 19);
+            this.nrTel_textBox.Name = "nrTel_textBox";
+            this.nrTel_textBox.ReadOnly = true;
+            this.nrTel_textBox.Size = new System.Drawing.Size(100, 20);
+            this.nrTel_textBox.TabIndex = 3;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(306, 24);
+            this.label11.Location = new System.Drawing.Point(261, 24);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(35, 13);
             this.label11.TabIndex = 10;
@@ -356,13 +356,13 @@
             this.label13.Text = "Nr konta bankowego:";
             this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
-            // textBox13
+            // nrKonta_textBox
             // 
-            this.textBox13.Location = new System.Drawing.Point(122, 23);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(299, 20);
-            this.textBox13.TabIndex = 13;
+            this.nrKonta_textBox.Location = new System.Drawing.Point(122, 23);
+            this.nrKonta_textBox.Name = "nrKonta_textBox";
+            this.nrKonta_textBox.ReadOnly = true;
+            this.nrKonta_textBox.Size = new System.Drawing.Size(299, 20);
+            this.nrKonta_textBox.TabIndex = 13;
             // 
             // label14
             // 
@@ -373,13 +373,13 @@
             this.label14.TabIndex = 14;
             this.label14.Text = "Płeć:";
             // 
-            // textBox14
+            // plec_textBox
             // 
-            this.textBox14.Location = new System.Drawing.Point(385, 49);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(36, 20);
-            this.textBox14.TabIndex = 15;
+            this.plec_textBox.Location = new System.Drawing.Point(385, 49);
+            this.plec_textBox.Name = "plec_textBox";
+            this.plec_textBox.ReadOnly = true;
+            this.plec_textBox.Size = new System.Drawing.Size(36, 20);
+            this.plec_textBox.TabIndex = 15;
             // 
             // button1
             // 
@@ -431,9 +431,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox pesel_textBox;
+        private System.Windows.Forms.TextBox dataUr_textBox;
+        private System.Windows.Forms.TextBox nazwisko_textBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox drugieImie_textBox;
         private System.Windows.Forms.Label label1;
@@ -443,21 +443,21 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox ulica_textBox;
+        private System.Windows.Forms.TextBox nrLok_textBox;
+        private System.Windows.Forms.TextBox nrBud_textBox;
+        private System.Windows.Forms.TextBox kodPocztowy_textBox;
+        private System.Windows.Forms.TextBox miasto_textBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox nrTel_textBox;
+        private System.Windows.Forms.TextBox email_textBox;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox nrKonta_textBox;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox plec_textBox;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
