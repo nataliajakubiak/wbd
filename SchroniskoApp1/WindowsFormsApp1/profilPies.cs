@@ -26,9 +26,6 @@ namespace WindowsFormsApp1
 
         }
 
-
-
-
         private void Init()
         {
 
@@ -244,7 +241,127 @@ namespace WindowsFormsApp1
 
         private void modyfikujClick(object sender, EventArgs e)
         {
+            nrBoksu_textBox.ReadOnly = false;
+            plec_textBox.ReadOnly = false;
+            rasa_textBox.ReadOnly = false;
+            dataUr_textBox.ReadOnly = false;
+            dataPrzyj_textBox.ReadOnly = false;
+            imie_textBox.ReadOnly = false;
+            karta_textBox.ReadOnly = false;
+            siersc_textBox.ReadOnly = false;
+            umaszczenie_textBox.ReadOnly = false;
+            charakter_textBox.ReadOnly = false;
+            rodowod_textBox.ReadOnly = false;
+            tolerancja_textBox.ReadOnly = false;
+            nrChip_textBox.ReadOnly = false;
+            chip_textBox.ReadOnly = false;
+            agresja_textBox.ReadOnly = false;
+            sterylizacja_textBox.ReadOnly = false;
+            chodzenie_textBox.ReadOnly = false;
+            waga_textBox.ReadOnly = false;
+            rozmiar_textBox.ReadOnly = false;
+            wscieklizna_text.ReadOnly = false;
+            borelioza_text.ReadOnly = false;
+            wzw_textBox.ReadOnly = false;
+            nosowka_textBox.ReadOnly = false;
+            zmienButton.Enabled = true;
+            odswiezButton.Enabled = true;
+        }
 
+        private void zmienClick(object sender, EventArgs e)
+        {
+            var nrBoksu = nrBoksu_textBox.Text;
+            var plec = plec_textBox.Text;
+            var rasa = rasa_textBox.Text;
+            var dataUr = dataUr_textBox.Text;
+            var dataPrzyj = dataPrzyj_textBox.Text;
+            var imie = imie_textBox.Text;
+            var karta = karta_textBox.Text;
+            var siersc = siersc_textBox.Text;
+            var umaszczenie = umaszczenie_textBox.Text;
+            var charakter = charakter_textBox.Text;
+            var rodowod = rodowod_textBox.Text;
+            var tolerancja = tolerancja_textBox.Text;
+            var nrChip = nrChip_textBox.Text;
+            var chip = chip_textBox.Text;
+            var agresja = agresja_textBox.Text;
+            var sterylizacja = sterylizacja_textBox.Text;
+            var chodzenie = chodzenie_textBox.Text;
+            var waga = waga_textBox.Text;
+            var rozmiar = rozmiar_textBox.Text;
+            var wscieklizna = wscieklizna_text.Text;
+            var borelioza= borelioza_text.Text;
+            var wzw = wzw_textBox.Text;
+            var nosowka = nosowka_textBox.Text;
+
+            List<string> query = new List<string>();
+
+            string updateZwierzeta = $"update zwierzeta set " +
+                $"imie = '{imie}', " +
+                $"data_urodzenia = TO_DATE('{dataUr}', 'YYYY-MM-DD'), " +
+                $"plec = '{plec}'," +
+                $"data_przyjecia =TO_DATE('{dataPrzyj}', 'YYYY-MM-DD'), " +
+                $"nr_boksu = TO_NUMBER('{nrBoksu}')," +
+                $"czy_sterylizacja = '{sterylizacja}'," +
+                $"waga = TO_NUMBER('{waga}')," +
+                $"karta_zdrowia ='{karta}'," +
+                $"czy_chip ='{chip}'," +
+                $"nr_chipu='{nrChip}'," +
+                $"czy_rodowod ='{rodowod}'," +
+                $"umaszczenie ='{umaszczenie}'," +
+                $"charakter ='{umaszczenie}'," +
+                $"siersc ='{siersc}' " +
+                $"where nr_zwierzecia='{this.NrZwierza}'";      
+
+
+
+            query.Add(updateZwierzeta);
+
+            string updateRasyPsa = $"update RASY_PIES set nazwa = '{rasa}'" 
+                + $" where nr_rasy_psa = (select nr_rasy_psa from psy where nr_zwierzecia='{this.NrZwierza}' )";
+            query.Add(updateRasyPsa);
+
+            string updateRozmiary=$"update ROZMIARY_PSA set nazwa = '{rozmiar}' " +
+                $"where nr_rozmiaru = (select nr_rozmiaru from PSY where " +
+                $"nr_zwierzecia='{this.NrZwierza}' )";
+            query.Add(updateRozmiary);
+
+            string updatePsy = $"update PSY set czy_chodzenie_na_smyczy = '{chodzenie}'," +
+                $"czy_agresja_ludzie = '{agresja}'," +
+                $"czy_tolerancja_zwierzeta = '{tolerancja}' where nr_zwierzecia = '{this.NrZwierza}'";
+
+
+            query.Add(updatePsy);
+
+            string updateSzczepienia1 = $"update SZCZEPIENIA set data_szczepienia=TO_DATE('{borelioza}') " +
+                $"where nr_szczepionki='1' and nr_zwierzecia='{this.NrZwierza}'";
+            query.Add(updateSzczepienia1);
+
+            string updateSzczepienia2 = $"update SZCZEPIENIA set data_szczepienia=TO_DATE('{wscieklizna}') " +
+                $"where nr_szczepionki='2' and nr_zwierzecia='{this.NrZwierza}'";
+            query.Add(updateSzczepienia2);
+
+
+            string updateSzczepienia3 = $"update SZCZEPIENIA set data_szczepienia=TO_DATE('{wzw}') " +
+                $"where nr_szczepionki='3' and nr_zwierzecia='{this.NrZwierza}'";
+            query.Add(updateSzczepienia3);
+
+            string updateSzczepienia4 = $"update SZCZEPIENIA set data_szczepienia=TO_DATE('{nosowka}') " +
+                $"where nr_szczepionki='4' and nr_zwierzecia='{this.NrZwierza}'";
+            query.Add(updateSzczepienia4);
+
+
+            query.ForEach(queryParam =>
+            {
+                var oracleCommand = new OracleCommand(queryParam, nowe_polaczenie.nowe_polaczenie);
+                oracleCommand.CommandType = CommandType.Text;
+                oracleCommand.ExecuteNonQuery();
+            });
+        }
+
+        private void odswiezClick(object sender, EventArgs e)
+        {
+            Init();
         }
     }
 }
