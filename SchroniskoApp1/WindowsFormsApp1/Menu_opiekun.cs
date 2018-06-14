@@ -53,7 +53,9 @@ namespace WindowsFormsApp1
 
         private void ZmienHasloClick(object sender, EventArgs e)
         {
-            
+            this.Hide();
+            Panel_hasla ss = new Panel_hasla(this.NazwaUzytkownika);
+            ss.Show();
         }
 
         private void zakonczClick(object sender, EventArgs e)

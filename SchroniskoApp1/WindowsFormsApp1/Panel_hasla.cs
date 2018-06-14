@@ -33,9 +33,19 @@ namespace WindowsFormsApp1
 
         private void button_goback_Click(object sender, EventArgs e)
         {
+            if (user_name_login == "admin1")
+            { 
             this.Hide();
-            Menu_admin ss = new Menu_admin();
+            Menu_admin ss = new Menu_admin(user_name_login);
             ss.Show();
+            }
+        
+        else if (user_name_login == "anna")
+            {
+                this.Hide();
+                Menu_opiekun ss = new Menu_opiekun(user_name_login);
+                ss.Show();
+            }
         }
 
         private void button_ok_Click(object sender, EventArgs e)
