@@ -136,7 +136,7 @@ namespace WindowsFormsApp1
         private void powrotClick(object sender, EventArgs e)
         {
             this.Hide();
-            Menu_opiekun ss = new Menu_opiekun();
+            Menu_opiekun ss = new Menu_opiekun(this.NazwaUzytkownika);
             ss.Show();
         }
 

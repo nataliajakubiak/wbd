@@ -17,10 +17,11 @@ namespace WindowsFormsApp1
         SQLCONNECT nowe_polaczenie = new SQLCONNECT();
 
         public string NrZwierza;
-
-        public profilPies(string NrZwierza)
+        string user_name_login;
+        public profilPies(string NrZwierza, string nazwa_przekazana)
         {
             this.NrZwierza = NrZwierza;
+            user_name_login = nazwa_przekazana;
             InitializeComponent();
             Init();
 
@@ -235,7 +236,7 @@ namespace WindowsFormsApp1
         private void powotClick(object sender, EventArgs e)
         {
             this.Hide();
-            mojeZwierzeta ss = new mojeZwierzeta();
+            mojeZwierzeta ss = new mojeZwierzeta(user_name_login);
             ss.Show();
         }
 

@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
         private void mojeZwierzetaClick(object sender, EventArgs e)
         {
             this.Hide();
-            mojeZwierzeta ss = new mojeZwierzeta();
+            mojeZwierzeta ss = new mojeZwierzeta(this.NazwaUzytkownika);
             ss.Show();
         }
 

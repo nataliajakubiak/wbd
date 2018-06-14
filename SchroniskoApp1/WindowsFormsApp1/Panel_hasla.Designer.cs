@@ -76,6 +76,7 @@
             this.textBox_haslo1.Name = "textBox_haslo1";
             this.textBox_haslo1.Size = new System.Drawing.Size(166, 26);
             this.textBox_haslo1.TabIndex = 10;
+            this.textBox_haslo1.TextChanged += new System.EventHandler(this.textBox_haslo1_TextChanged);
             // 
             // label1
             // 
@@ -94,6 +95,7 @@
             this.textBox_haslo2.Name = "textBox_haslo2";
             this.textBox_haslo2.Size = new System.Drawing.Size(166, 26);
             this.textBox_haslo2.TabIndex = 12;
+            this.textBox_haslo2.TextChanged += new System.EventHandler(this.textBox_haslo2_TextChanged);
             // 
             // button_ok
             // 

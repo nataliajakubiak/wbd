@@ -33,19 +33,21 @@ namespace WindowsFormsApp1
 
         private void button_goback_Click(object sender, EventArgs e)
         {
-            if (user_name_login == "admin1")
-            { 
-            this.Hide();
-            Menu_admin ss = new Menu_admin(user_name_login);
-            ss.Show();
-            }
-        
-        else if (user_name_login == "anna")
+
+            if (user_name_login == "anna")
             {
                 this.Hide();
                 Menu_opiekun ss = new Menu_opiekun(user_name_login);
                 ss.Show();
             }
+            else 
+            {
+                this.Hide();
+                Menu_admin ss = new Menu_admin(user_name_login);
+                ss.Show();
+            }
+
+            
         }
 
         private void button_ok_Click(object sender, EventArgs e)
@@ -98,6 +100,16 @@ namespace WindowsFormsApp1
 
                 nowe_polaczenie.nowe_polaczenie.Dispose();
             }
+
+        }
+
+        private void textBox_haslo2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_haslo1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

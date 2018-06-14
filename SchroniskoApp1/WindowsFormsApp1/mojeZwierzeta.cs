@@ -19,10 +19,12 @@ namespace WindowsFormsApp1
         private OracleCommand control_manager_dialog;
         private OracleDataAdapter data_adapter;
         private DataSet wybor_danych;
-        
 
-        public mojeZwierzeta()
+        string user_name_login;
+       
+        public mojeZwierzeta(string nazwa_przekazana)
         {
+            user_name_login = nazwa_przekazana;
             InitializeComponent();
             init();
         }
@@ -93,72 +95,80 @@ namespace WindowsFormsApp1
         private void powrotClick(object sender, EventArgs e)
         {
             this.Hide();
-            Menu_opiekun ss = new Menu_opiekun();
+            Menu_opiekun ss = new Menu_opiekun(user_name_login);
             ss.Show();
         }
 
         private void wyswietlProfilZwierzeciaClick(object sender, EventArgs e)
         {
-            this.Hide();
-
-            try
+            if (nrZwierzecia_textBox.Text.Length == 0)
             {
-                nowe_polaczenie.Connection();
-                string kot;
-                kot = "select count(nr_zwierzecia) from koty where nr_zwierzecia ='" + nrZwierzecia_textBox.Text + "'";
+                String message_error_login = "Proszę podać numer zwierzęcia.";
+                MessageBox.Show(message_error_login);
+            }
+            else
+            {
+                this.Hide();
 
-
-
-
-                control_manager_dialog = new OracleCommand(kot, nowe_polaczenie.nowe_polaczenie);
-                control_manager_dialog.CommandType = CommandType.Text;
-
-                OracleDataReader dr = control_manager_dialog.ExecuteReader();
-                dr.Read();
-
-                OracleDecimal ileKotow = dr.GetOracleDecimal(0);
-
-
-                if (ileKotow.ToString().Equals("1"))
+                try
                 {
-                    profilKot ss = new profilKot(nrZwierzecia_textBox.Text);
-                    ss.Show();
+                    nowe_polaczenie.Connection();
+                    string kot;
+                    kot = "select count(nr_zwierzecia) from koty where nr_zwierzecia ='" + nrZwierzecia_textBox.Text + "'";
+
+
+
+
+                    control_manager_dialog = new OracleCommand(kot, nowe_polaczenie.nowe_polaczenie);
+                    control_manager_dialog.CommandType = CommandType.Text;
+
+                    OracleDataReader dr = control_manager_dialog.ExecuteReader();
+                    dr.Read();
+
+                    OracleDecimal ileKotow = dr.GetOracleDecimal(0);
+
+
+                    if (ileKotow.ToString().Equals("1"))
+                    {
+                        profilKot ss = new profilKot(nrZwierzecia_textBox.Text, user_name_login);
+                        ss.Show();
+                    }
+                    else
+                    {
+                        profilPies ss = new profilPies(nrZwierzecia_textBox.Text, user_name_login);
+                        ss.Show();
+                    }
+
                 }
-                else
+                catch (OracleException ex)
                 {
-                    profilPies ss = new profilPies(nrZwierzecia_textBox.Text);
-                    ss.Show();
-                }
+                    switch (ex.Number)
+                    {
+                        case 1:
+                            MessageBox.Show("Error attempting to insert duplicate data.");
 
-            }
-            catch (OracleException ex)
-            {
-                switch (ex.Number)
+                            break;
+                        case 12560:
+                            MessageBox.Show("The database is unvaliable.");
+
+                            break;
+                        default:
+                            MessageBox.Show("Database error: " + ex.Message.ToString());
+
+                            break;
+                    }
+                }
+                catch (Exception ex)
                 {
-                    case 1:
-                        MessageBox.Show("Error attempting to insert duplicate data.");
-
-                        break;
-                    case 12560:
-                        MessageBox.Show("The database is unvaliable.");
-
-                        break;
-                    default:
-                        MessageBox.Show("Database error: " + ex.Message.ToString());
-
-                        break;
+                    MessageBox.Show(ex.Message.ToString());
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-            finally
-            {
+                finally
+                {
 
-                //nowe_polaczenie.Dispose();
-            }
+                    //nowe_polaczenie.Dispose();
+                }
 
+            }
         }
     }
 }
