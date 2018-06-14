@@ -144,5 +144,89 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void modyfikujClick(object sender, EventArgs e)
+        {
+         pesel_textBox.ReadOnly=false;
+         dataUr_textBox.ReadOnly=false;
+         nazwisko_textBox.ReadOnly=false;
+         drugieImie_textBox.ReadOnly=false;
+         imie_textBox.ReadOnly=false;
+         ulica_textBox.ReadOnly=false;
+         nrLok_textBox.ReadOnly=false;
+         nrBud_textBox.ReadOnly=false;
+         kodPocztowy_textBox.ReadOnly=false;
+         miasto_textBox.ReadOnly=false;
+         nrTel_textBox.ReadOnly=false;
+         email_textBox.ReadOnly=false;
+         nrKonta_textBox.ReadOnly=false;
+         plec_textBox.ReadOnly=false;
+         zapiszButton.Enabled=true;
+         odswiezButton.Enabled=true;
+
+        }
+
+        private void zapiszClick(object sender, EventArgs e)
+        {
+
+            var pesel = pesel_textBox.Text;
+            var dataUr = dataUr_textBox.Text;
+            var nazwisko = nazwisko_textBox.Text;
+            var drugieImie = drugieImie_textBox.Text;
+            var imie= imie_textBox.Text;
+            var ulica = ulica_textBox.Text;
+            var nrLok =nrLok_textBox.Text;
+            var nrBud = nrBud_textBox.Text;
+            var kodPocztowy = kodPocztowy_textBox.Text;
+            var miasto = miasto_textBox.Text;
+            var nrTel =nrTel_textBox.Text;
+            var email = email_textBox.Text;
+            var nrKonta = nrKonta_textBox.Text;
+            var plec =plec_textBox.Text;
+            zapiszButton.Enabled = true;
+            odswiezButton.Enabled = true;
+
+            List<string> query = new List<string>();
+
+            string updatePracownicy = $"update PRACOWNICY set " +
+                 $"imie = '{imie}', " +
+                 $"data_urodzenia = TO_DATE('{dataUr}', 'YYYY-MM-DD'), " +
+                 $"plec = '{plec}'," +
+                 $"nazwisko = '{nazwisko}'," +
+                 $"drugie_imie ='{drugieImie}'," +
+                 $"pesel ='{pesel}'," +
+                 $"ulica = '{ulica}'," +
+                 $"nr_budynku ='{nrBud}'," +
+                 $"nr_mieszkania ='{nrLok}'," +
+                 $"nr_konta_bankowego='{nrKonta}'," +
+                 $"telefon ='{nrTel}'," +
+                 $"email = '{email}'" +
+                 $"where nr_pracownika='1'";
+
+                            
+                       
+           query.Add(updatePracownicy);
+
+
+            string updatePoczty = $"update POCZTY set " +
+                $"kod_pocztowy = '{kodPocztowy}'," +
+                $"miejscowosc = '{miasto}'" +
+                $"where nr_poczty='3'";
+
+            query.Add(updatePoczty);
+
+            query.ForEach(queryParam =>
+            {
+                var oracleCommand = new OracleCommand(queryParam, nowe_polaczenie.nowe_polaczenie);
+                oracleCommand.CommandType = CommandType.Text;
+                oracleCommand.ExecuteNonQuery();
+            });
+
+        }
+
+        private void odswiezClick(object sender, EventArgs e)
+        {
+            Init();
+        }
     }
 }

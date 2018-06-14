@@ -31,7 +31,6 @@
             this.button_review = new System.Windows.Forms.Button();
             this.button_new_record = new System.Windows.Forms.Button();
             this.button_modify_record = new System.Windows.Forms.Button();
-            this.button_delete_record = new System.Windows.Forms.Button();
             this.button_change_password = new System.Windows.Forms.Button();
             this.button_logout = new System.Windows.Forms.Button();
             this.button_exit = new System.Windows.Forms.Button();
@@ -67,19 +66,9 @@
             this.button_modify_record.UseVisualStyleBackColor = true;
             this.button_modify_record.Click += new System.EventHandler(this.przegladajClick);
             // 
-            // button_delete_record
-            // 
-            this.button_delete_record.Location = new System.Drawing.Point(121, 150);
-            this.button_delete_record.Name = "button_delete_record";
-            this.button_delete_record.Size = new System.Drawing.Size(235, 40);
-            this.button_delete_record.TabIndex = 5;
-            this.button_delete_record.Text = "Modyfikuj rekordy";
-            this.button_delete_record.UseVisualStyleBackColor = true;
-            this.button_delete_record.Click += new System.EventHandler(this.ModyfikujRekordyClick);
-            // 
             // button_change_password
             // 
-            this.button_change_password.Location = new System.Drawing.Point(121, 196);
+            this.button_change_password.Location = new System.Drawing.Point(121, 150);
             this.button_change_password.Name = "button_change_password";
             this.button_change_password.Size = new System.Drawing.Size(235, 40);
             this.button_change_password.TabIndex = 6;
@@ -89,7 +78,7 @@
             // 
             // button_logout
             // 
-            this.button_logout.Location = new System.Drawing.Point(121, 242);
+            this.button_logout.Location = new System.Drawing.Point(121, 196);
             this.button_logout.Name = "button_logout";
             this.button_logout.Size = new System.Drawing.Size(235, 40);
             this.button_logout.TabIndex = 7;
@@ -99,7 +88,7 @@
             // 
             // button_exit
             // 
-            this.button_exit.Location = new System.Drawing.Point(121, 288);
+            this.button_exit.Location = new System.Drawing.Point(121, 242);
             this.button_exit.Name = "button_exit";
             this.button_exit.Size = new System.Drawing.Size(235, 40);
             this.button_exit.TabIndex = 8;
@@ -111,11 +100,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 350);
+            this.ClientSize = new System.Drawing.Size(487, 303);
             this.Controls.Add(this.button_exit);
             this.Controls.Add(this.button_logout);
             this.Controls.Add(this.button_change_password);
-            this.Controls.Add(this.button_delete_record);
             this.Controls.Add(this.button_modify_record);
             this.Controls.Add(this.button_new_record);
             this.Controls.Add(this.button_review);
@@ -130,7 +118,6 @@
         private System.Windows.Forms.Button button_review;
         private System.Windows.Forms.Button button_new_record;
         private System.Windows.Forms.Button button_modify_record;
-        private System.Windows.Forms.Button button_delete_record;
         private System.Windows.Forms.Button button_change_password;
         private System.Windows.Forms.Button button_logout;
         private System.Windows.Forms.Button button_exit;
