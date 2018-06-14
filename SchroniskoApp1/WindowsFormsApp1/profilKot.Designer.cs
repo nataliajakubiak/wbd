@@ -75,7 +75,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.zmienButton = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.odswiezButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -506,7 +506,7 @@
             this.button1.TabIndex = 15;
             this.button1.Text = "Modyfikuj dane";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.modyfikujClick);
             // 
             // button2
             // 
@@ -527,23 +527,25 @@
             this.zmienButton.TabIndex = 17;
             this.zmienButton.Text = "Zmień";
             this.zmienButton.UseVisualStyleBackColor = true;
+            this.zmienButton.Click += new System.EventHandler(this.zmienClick);
             // 
-            // button3
+            // odswiezButton
             // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(384, 426);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 23);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Odswież";
-            this.button3.UseVisualStyleBackColor = true;
+            this.odswiezButton.Enabled = false;
+            this.odswiezButton.Location = new System.Drawing.Point(384, 426);
+            this.odswiezButton.Name = "odswiezButton";
+            this.odswiezButton.Size = new System.Drawing.Size(104, 23);
+            this.odswiezButton.TabIndex = 18;
+            this.odswiezButton.Text = "Odswież";
+            this.odswiezButton.UseVisualStyleBackColor = true;
+            this.odswiezButton.Click += new System.EventHandler(this.odswiezClick);
             // 
             // profilKot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(500, 456);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.odswiezButton);
             this.Controls.Add(this.zmienButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -613,6 +615,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button zmienButton;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button odswiezButton;
     }
 }

@@ -309,7 +309,7 @@ namespace WindowsFormsApp1
                 $"nr_chipu='{nrChip}'," +
                 $"czy_rodowod ='{rodowod}'," +
                 $"umaszczenie ='{umaszczenie}'," +
-                $"charakter ='{umaszczenie}'," +
+                $"charakter ='{charakter}'," +
                 $"siersc ='{siersc}' " +
                 $"where nr_zwierzecia='{this.NrZwierza}'";      
 
@@ -329,8 +329,6 @@ namespace WindowsFormsApp1
             string updatePsy = $"update PSY set czy_chodzenie_na_smyczy = '{chodzenie}'," +
                 $"czy_agresja_ludzie = '{agresja}'," +
                 $"czy_tolerancja_zwierzeta = '{tolerancja}' where nr_zwierzecia = '{this.NrZwierza}'";
-
-
             query.Add(updatePsy);
 
             string updateSzczepienia1 = $"update SZCZEPIENIA set data_szczepienia=TO_DATE('{borelioza}') " +
