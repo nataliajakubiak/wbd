@@ -112,6 +112,12 @@
     <Compile Include="Panel_usuwania.Designer.cs">
       <DependentUpon>Panel_usuwania.cs</DependentUpon>
     </Compile>
+    <Compile Include="profilKot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profilKot.Designer.cs">
+      <DependentUpon>profilKot.cs</DependentUpon>
+    </Compile>
     <Compile Include="profilPies.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel_usuwania.resx">
       <DependentUpon>Panel_usuwania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profilKot.resx">
+      <DependentUpon>profilKot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="profilPies.resx">
       <DependentUpon>profilPies.cs</DependentUpon>

@@ -69,7 +69,7 @@ namespace WindowsFormsApp1
                 {
                     sql = "select table_name from user_tables where table_name in ('GRAFIKI', 'WYNAGRODZENIA', 'SPONSORZY', 'PRACOWNICY', 'PRACOWNIK_WYDARZENIE', 'STANOWISKA', 'WYDARZENIA')";
                 }
-                else if(this.TypUzytkownika == OPIEKUN)
+                else if(this.TypUzytkownika == "opiekun")
                 {
                     sql = "select table_name from user_tables where table_name in ('GRAFIKI', 'PRACOWNICY', 'PRACOWNIK_WYDARZENIE', 'STANOWISKA', 'WYDARZENIA', 'ADOPCJE', 'BOKSY', 'KOTY', 'PSY', 'RASY_KOT', 'RASY_PIES', 'ROZMIARY_PSA', 'SZCZEPIENIA', 'SZCZEPIONKI', 'ZWIERZETA')";
                 }

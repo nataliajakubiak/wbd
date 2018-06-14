@@ -21,5 +21,17 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void powotClick(object sender, EventArgs e)
+        {
+            this.Hide();
+            mojeZwierzeta ss = new mojeZwierzeta();
+            ss.Show();
+        }
+
+        private void modyfikujClick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

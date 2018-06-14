@@ -16,5 +16,12 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void powrotClick(object sender, EventArgs e)
+        {
+            this.Hide();
+            mojeZwierzeta ss = new mojeZwierzeta();
+            ss.Show();
+        }
     }
 }
