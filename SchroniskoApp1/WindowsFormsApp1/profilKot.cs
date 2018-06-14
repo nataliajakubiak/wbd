@@ -76,8 +76,8 @@ namespace WindowsFormsApp1
             this.umaszczenie_textBox.Text = Umaszczenie;
             this.charakter_textBox.Text = Charakter;
             this.siersc_textBox.Text = Siersc;
-            this.dataUr_textBox.Text = DataUrodzenia.ToShortTimeString();
-            this.dataPrzyj_textBox.Text = DataPrzyjecia.ToShortTimeString();
+            this.dataUr_textBox.Text = DataUrodzenia.ToShortDateString();
+            this.dataPrzyj_textBox.Text = DataPrzyjecia.ToShortDateString();
 
 
 
@@ -108,6 +108,89 @@ namespace WindowsFormsApp1
             Drapanie = (string)dr2["czy_drapie"];
             this.drapanie_textBox.Text = Drapanie;
 
+
+            string sql3= "select data_szczepienia from szczepienia where nr_szczepionki = '1' and nr_zwierzecia = ' " + this.NrZwierza + "'";
+            var control_manager_dialog3 = new OracleCommand(sql3, nowe_polaczenie.nowe_polaczenie);
+            control_manager_dialog3.CommandType = CommandType.Text;
+            OracleDataReader dr3 = control_manager_dialog3.ExecuteReader();
+            dr3.Read();
+            DateTime Wscieklizna, Borelioza, Leptospiroza, Panleukopenia;
+
+            if (dr3.HasRows)
+            {
+                Wscieklizna = (DateTime)dr3["data_szczepienia"];
+                this.wscieklizna_text.Text = Wscieklizna.ToShortDateString();
+            }
+
+
+            else
+            {
+                Wscieklizna = DateTime.MinValue;
+                this.wscieklizna_text.Text = Wscieklizna.ToShortDateString();
+
+            }
+
+
+            string sql4 = "select data_szczepienia from szczepienia where nr_szczepionki = '2' and nr_zwierzecia = ' " + this.NrZwierza + "'";
+            var control_manager_dialog4 = new OracleCommand(sql4, nowe_polaczenie.nowe_polaczenie);
+            control_manager_dialog4.CommandType = CommandType.Text;
+            OracleDataReader dr4 = control_manager_dialog4.ExecuteReader();
+            dr4.Read();
+
+            if (dr4.HasRows)
+            {
+                Borelioza = (DateTime)dr4["data_szczepienia"];
+                this.borelioza_text.Text = Borelioza.ToShortDateString();
+            }
+
+
+            else
+            {
+                Borelioza = DateTime.MinValue;
+                this.borelioza_text.Text = Borelioza.ToShortDateString();
+
+            }
+
+
+
+            string sql5 = "select data_szczepienia from szczepienia where nr_szczepionki = '5' and nr_zwierzecia = ' " + this.NrZwierza + "'";
+            var control_manager_dialog5 = new OracleCommand(sql5, nowe_polaczenie.nowe_polaczenie);
+            control_manager_dialog5.CommandType = CommandType.Text;
+            OracleDataReader dr5 = control_manager_dialog5.ExecuteReader();
+            dr5.Read();
+
+
+            if (dr5.HasRows)
+            {
+                Leptospiroza = (DateTime)dr5["data_szczepienia"];
+                this.leptospiroza_textBox.Text = Leptospiroza.ToShortDateString();
+
+            }
+            else
+            {
+                Leptospiroza = DateTime.MinValue;
+                this.leptospiroza_textBox.Text = Leptospiroza.ToShortDateString();
+
+            }
+
+
+            string sql6 = "select data_szczepienia from szczepienia where nr_szczepionki = '6' and nr_zwierzecia = ' " + this.NrZwierza + "'";
+            var control_manager_dialog6 = new OracleCommand(sql6, nowe_polaczenie.nowe_polaczenie);
+            control_manager_dialog6.CommandType = CommandType.Text;
+            OracleDataReader dr6 = control_manager_dialog6.ExecuteReader();
+            dr6.Read();
+
+            if (dr6.HasRows)
+            {
+                Panleukopenia = (DateTime)dr6["data_szczepienia"];
+                this.panleukopenia_textBox.Text = Panleukopenia.ToShortDateString();
+            }
+            else
+            {
+                Panleukopenia = DateTime.MinValue;
+                this.panleukopenia_textBox.Text = Panleukopenia.ToShortDateString();
+
+            }
 
 
 
