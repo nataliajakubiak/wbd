@@ -69,6 +69,7 @@
             this.dataGridView_review.Name = "dataGridView_review";
             this.dataGridView_review.Size = new System.Drawing.Size(666, 265);
             this.dataGridView_review.TabIndex = 2;
+            this.dataGridView_review.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_review_CellContentClick);
             // 
             // label1
             // 

@@ -212,5 +212,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void dataGridView_review_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
