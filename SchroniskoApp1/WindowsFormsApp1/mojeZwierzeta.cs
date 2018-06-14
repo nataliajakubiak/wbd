@@ -126,7 +126,7 @@ namespace WindowsFormsApp1
                 }
                 else
                 {
-                    profilPies ss = new profilPies();
+                    profilPies ss = new profilPies(nrZwierzecia_textBox.Text);
                     ss.Show();
                 }
 
