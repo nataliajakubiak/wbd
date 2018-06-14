@@ -112,6 +112,12 @@
     <Compile Include="Panel_usuwania.Designer.cs">
       <DependentUpon>Panel_usuwania.cs</DependentUpon>
     </Compile>
+    <Compile Include="profilPies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="profilPies.Designer.cs">
+      <DependentUpon>profilPies.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLCONNECT.cs" />
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel_usuwania.resx">
       <DependentUpon>Panel_usuwania.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="profilPies.resx">
+      <DependentUpon>profilPies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
