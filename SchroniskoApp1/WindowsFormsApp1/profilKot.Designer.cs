@@ -48,14 +48,14 @@
             this.siersc_textBox = new System.Windows.Forms.TextBox();
             this.umaszczenie_textBox = new System.Windows.Forms.TextBox();
             this.charakter_textBox = new System.Windows.Forms.TextBox();
-            this.tolerancja_textBox = new System.Windows.Forms.TextBox();
+            this.nrChipu_textBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.rodowod_textBox = new System.Windows.Forms.TextBox();
             this.chip_textBox = new System.Windows.Forms.TextBox();
-            this.agresja_textBox = new System.Windows.Forms.TextBox();
-            this.chodzenie_textBox = new System.Windows.Forms.TextBox();
+            this.drapanie_textBox = new System.Windows.Forms.TextBox();
             this.waga_textBox = new System.Windows.Forms.TextBox();
-            this.rozmiar_textBox = new System.Windows.Forms.TextBox();
+            this.sterylizacja_textBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,8 +64,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.wscieklizna_text = new System.Windows.Forms.TextBox();
+            this.borelioza_text = new System.Windows.Forms.TextBox();
             this.panleukopenia_textBox = new System.Windows.Forms.TextBox();
             this.leptospiroza_textBox = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -219,14 +219,14 @@
             this.groupBox2.Controls.Add(this.siersc_textBox);
             this.groupBox2.Controls.Add(this.umaszczenie_textBox);
             this.groupBox2.Controls.Add(this.charakter_textBox);
-            this.groupBox2.Controls.Add(this.tolerancja_textBox);
+            this.groupBox2.Controls.Add(this.nrChipu_textBox);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.rodowod_textBox);
             this.groupBox2.Controls.Add(this.chip_textBox);
-            this.groupBox2.Controls.Add(this.agresja_textBox);
-            this.groupBox2.Controls.Add(this.chodzenie_textBox);
+            this.groupBox2.Controls.Add(this.drapanie_textBox);
             this.groupBox2.Controls.Add(this.waga_textBox);
-            this.groupBox2.Controls.Add(this.rozmiar_textBox);
+            this.groupBox2.Controls.Add(this.sterylizacja_textBox);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.label13);
@@ -282,13 +282,13 @@
             this.charakter_textBox.Size = new System.Drawing.Size(100, 20);
             this.charakter_textBox.TabIndex = 24;
             // 
-            // tolerancja_textBox
+            // nrChipu_textBox
             // 
-            this.tolerancja_textBox.Location = new System.Drawing.Point(345, 98);
-            this.tolerancja_textBox.Name = "tolerancja_textBox";
-            this.tolerancja_textBox.ReadOnly = true;
-            this.tolerancja_textBox.Size = new System.Drawing.Size(100, 20);
-            this.tolerancja_textBox.TabIndex = 22;
+            this.nrChipu_textBox.Location = new System.Drawing.Point(345, 98);
+            this.nrChipu_textBox.Name = "nrChipu_textBox";
+            this.nrChipu_textBox.ReadOnly = true;
+            this.nrChipu_textBox.Size = new System.Drawing.Size(100, 20);
+            this.nrChipu_textBox.TabIndex = 22;
             // 
             // label17
             // 
@@ -308,29 +308,29 @@
             this.label16.TabIndex = 18;
             this.label16.Text = "Nr chipu:";
             // 
+            // rodowod_textBox
+            // 
+            this.rodowod_textBox.Location = new System.Drawing.Point(96, 121);
+            this.rodowod_textBox.Name = "rodowod_textBox";
+            this.rodowod_textBox.ReadOnly = true;
+            this.rodowod_textBox.Size = new System.Drawing.Size(100, 20);
+            this.rodowod_textBox.TabIndex = 17;
+            // 
             // chip_textBox
             // 
-            this.chip_textBox.Location = new System.Drawing.Point(96, 121);
+            this.chip_textBox.Location = new System.Drawing.Point(96, 95);
             this.chip_textBox.Name = "chip_textBox";
             this.chip_textBox.ReadOnly = true;
             this.chip_textBox.Size = new System.Drawing.Size(100, 20);
-            this.chip_textBox.TabIndex = 17;
+            this.chip_textBox.TabIndex = 16;
             // 
-            // agresja_textBox
+            // drapanie_textBox
             // 
-            this.agresja_textBox.Location = new System.Drawing.Point(96, 95);
-            this.agresja_textBox.Name = "agresja_textBox";
-            this.agresja_textBox.ReadOnly = true;
-            this.agresja_textBox.Size = new System.Drawing.Size(100, 20);
-            this.agresja_textBox.TabIndex = 16;
-            // 
-            // chodzenie_textBox
-            // 
-            this.chodzenie_textBox.Location = new System.Drawing.Point(96, 69);
-            this.chodzenie_textBox.Name = "chodzenie_textBox";
-            this.chodzenie_textBox.ReadOnly = true;
-            this.chodzenie_textBox.Size = new System.Drawing.Size(100, 20);
-            this.chodzenie_textBox.TabIndex = 13;
+            this.drapanie_textBox.Location = new System.Drawing.Point(96, 69);
+            this.drapanie_textBox.Name = "drapanie_textBox";
+            this.drapanie_textBox.ReadOnly = true;
+            this.drapanie_textBox.Size = new System.Drawing.Size(100, 20);
+            this.drapanie_textBox.TabIndex = 13;
             // 
             // waga_textBox
             // 
@@ -340,13 +340,13 @@
             this.waga_textBox.Size = new System.Drawing.Size(100, 20);
             this.waga_textBox.TabIndex = 14;
             // 
-            // rozmiar_textBox
+            // sterylizacja_textBox
             // 
-            this.rozmiar_textBox.Location = new System.Drawing.Point(96, 19);
-            this.rozmiar_textBox.Name = "rozmiar_textBox";
-            this.rozmiar_textBox.ReadOnly = true;
-            this.rozmiar_textBox.Size = new System.Drawing.Size(100, 20);
-            this.rozmiar_textBox.TabIndex = 15;
+            this.sterylizacja_textBox.Location = new System.Drawing.Point(96, 19);
+            this.sterylizacja_textBox.Name = "sterylizacja_textBox";
+            this.sterylizacja_textBox.ReadOnly = true;
+            this.sterylizacja_textBox.Size = new System.Drawing.Size(100, 20);
+            this.sterylizacja_textBox.TabIndex = 15;
             // 
             // label15
             // 
@@ -413,8 +413,8 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox19);
-            this.groupBox3.Controls.Add(this.textBox20);
+            this.groupBox3.Controls.Add(this.wscieklizna_text);
+            this.groupBox3.Controls.Add(this.borelioza_text);
             this.groupBox3.Controls.Add(this.panleukopenia_textBox);
             this.groupBox3.Controls.Add(this.leptospiroza_textBox);
             this.groupBox3.Controls.Add(this.label22);
@@ -428,21 +428,21 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Szczepienia";
             // 
-            // textBox19
+            // wscieklizna_text
             // 
-            this.textBox19.Location = new System.Drawing.Point(345, 45);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(100, 20);
-            this.textBox19.TabIndex = 27;
+            this.wscieklizna_text.Location = new System.Drawing.Point(345, 45);
+            this.wscieklizna_text.Name = "wscieklizna_text";
+            this.wscieklizna_text.ReadOnly = true;
+            this.wscieklizna_text.Size = new System.Drawing.Size(100, 20);
+            this.wscieklizna_text.TabIndex = 27;
             // 
-            // textBox20
+            // borelioza_text
             // 
-            this.textBox20.Location = new System.Drawing.Point(345, 19);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(100, 20);
-            this.textBox20.TabIndex = 28;
+            this.borelioza_text.Location = new System.Drawing.Point(345, 19);
+            this.borelioza_text.Name = "borelioza_text";
+            this.borelioza_text.ReadOnly = true;
+            this.borelioza_text.Size = new System.Drawing.Size(100, 20);
+            this.borelioza_text.TabIndex = 28;
             // 
             // panleukopenia_textBox
             // 
@@ -561,14 +561,14 @@
         private System.Windows.Forms.TextBox siersc_textBox;
         private System.Windows.Forms.TextBox umaszczenie_textBox;
         private System.Windows.Forms.TextBox charakter_textBox;
-        private System.Windows.Forms.TextBox tolerancja_textBox;
+        private System.Windows.Forms.TextBox nrChipu_textBox;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox rodowod_textBox;
         private System.Windows.Forms.TextBox chip_textBox;
-        private System.Windows.Forms.TextBox agresja_textBox;
-        private System.Windows.Forms.TextBox chodzenie_textBox;
+        private System.Windows.Forms.TextBox drapanie_textBox;
         private System.Windows.Forms.TextBox waga_textBox;
-        private System.Windows.Forms.TextBox rozmiar_textBox;
+        private System.Windows.Forms.TextBox sterylizacja_textBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
@@ -577,8 +577,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox wscieklizna_text;
+        private System.Windows.Forms.TextBox borelioza_text;
         private System.Windows.Forms.TextBox panleukopenia_textBox;
         private System.Windows.Forms.TextBox leptospiroza_textBox;
         private System.Windows.Forms.Label label22;

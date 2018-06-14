@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
 
                 if (ileKotow.ToString().Equals("1"))
                 {
-                    profilKot ss = new profilKot();
+                    profilKot ss = new profilKot(nrZwierzecia_textBox.Text);
                     ss.Show();
                 }
                 else
